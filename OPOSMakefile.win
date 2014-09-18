@@ -1,0 +1,43 @@
+# Project: OPOS
+
+
+CC   = gcc.exe
+OBJ  = object/console.o object/init.o object/main.o object/shell.o object/syssrv.o object/system.o object/start.o 
+LINKOBJ  = object/console.o object/init.o object/main.o object/shell.o object/syssrv.o object/system.o object/start.o 
+LIBS = ld -T link.ld -o object/kernel.bin main.o -nostdlib 
+INCS =   
+BIN  = kernel/OPOS.exe
+CFLAGS = $(INCS) -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -nostdlib -I ./include -c -o main.o -nostdlib  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before kernel/OPOS.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "kernel\OPOS.exe" $(LIBS)
+
+object/console.o: console.c
+	$(CC) -c console.c -o object/console.o $(CFLAGS)
+
+object/init.o: init.c
+	$(CC) -c init.c -o object/init.o $(CFLAGS)
+
+object/main.o: main.c
+	$(CC) -c main.c -o object/main.o $(CFLAGS)
+
+object/shell.o: shell.c
+	$(CC) -c shell.c -o object/shell.o $(CFLAGS)
+
+object/syssrv.o: syssrv.c
+	$(CC) -c syssrv.c -o object/syssrv.o $(CFLAGS)
+
+object/system.o: system.c
+	$(CC) -c system.c -o object/system.o $(CFLAGS)
+
+object/start.o: start.asm
+	nasm -f aout start.asm -o object/start.o 
