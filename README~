@@ -1,0 +1,55 @@
+Operating System is a software, in a nutshell, programs and data that provides an interface between the hardware and other software. The OS is responsible for management and coordination of processes and allocation and sharing of hardware resources such as RAM and disk space, and acts as a host for computing applications running on the OS. An Operating System may also provide orderly accesses to the hardware by competing software routines.
+
+OPOS or Open Source Operating System is an effort to realize how an Operating System works. OPOS is basically a light-weight & small scale Operating System that provides 32-bit, Protected mode, CUI (Character User Interface) targeted towards Intel Pentium processors. This Operating System, as of now has got a terminal which supports few commands in Real mode. This system can be booted from any FAT-12 or FAT-16 formatted media and also from Compact Disc. As it boots into Protected mode, driver for keyboard and monitor is added with it. Code for Programmable Timer Controller has also been incorporated to respond to processor clock pulses.
+
+REQUIREMENTS:
+
+Hardware Requirements: - 
+1) Processor: -                     Any Pentium/Celeron/8086 compatible processor
+2) Memory: -                       No mentionable requirement
+3) Monitor: -                       Preferably color - monitor for built-in graphics
+4) Floppy Disk Drive: -      1.44 MB, 31/2  inch,  high-density (HD)  FDD
+5) Floppy Disk: -                1.44 MB , 31/2  inch, high-density (HD)  Floppy Disk
+6) USB Disk (Pen Drive)
+7) Compact Disc Drive
+8) Compact Disc (CD)
+
+Software Requirements: - 
+1) Assembler: -                   nasm (Netwide Assembler) - 2.07 (For Windows XP)
+2) Compiler: -                     gcc 4.3.2
+3) Linker: -                          ld 2.17	
+4) Simulation Software: -   VMware Workstation 6.5
+                                             Sun Virtual Box 3.0.2    
+                                             Portable Sun Virtual Box 3.0.2
+                                             8086 Emulator
+                                             Virtual Floppy Disk
+5) Disk Editing Software: - Diamond CS Boot Sector Explorer 
+                                              Sectedit
+                                              Winhex
+                                              Ntdiskview
+                                              PTEDIT32
+6) Editor: -                           Notepad++ 4.2.2
+
+FEATURES:
+The Open Source Operating System has the following features: -
+
+Real mode features: -
+
+It has got 16-bit real mode.
+It has CUI (Character User Interface).
+
+Protected mode features: -
+
+It is lightweight & simple.
+It works in 32-bit Protected mode.
+It has got its own Keyboard and Monitor Driver. 
+Responds to PIT (Programmable Interval Timer) pulses.
+It has CUI (Character User Interface).
+It can recognize FAT-12 & FAT-16 file systems.
+It can be booted from any FAT-12 or FAT-16 formatted media and also from Compact Disc.
+The size of the kernel is only around 12 KB .So this OS is micro kernel based.
+
+
+Acknowledgement:
+
+This is a joint work with Dipanjan Das (its.dipanjan.das@gmail.com). He worked from scratch for this problem and motivated me for this.
